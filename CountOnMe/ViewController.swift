@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     }
     
     func warnigRepeatOperator() {
-        let alertVC = UIAlertController(title: "Zéro!", message: "Un operateur est déja mis !", preferredStyle: .alert)
+        let alertVC = UIAlertController(title: "Zéro!", message: "Operator already exist !", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alertVC, animated: true, completion: nil)
     }
@@ -105,8 +105,9 @@ class ViewController: UIViewController {
         // Iterate over operations while an operand still here
         while operationsToReduce.count > 1 {
             var place = 0
+            // priority for * or / operator
             if let index = operationsToReduce.firstIndex(where: { $0 == "*" || $0 == "/" }) {
-                //
+                // to force priority to left operator, index -1
                 place = index - 1
             }
             let left = Int(operationsToReduce[place])!
