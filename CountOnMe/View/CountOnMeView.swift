@@ -7,3 +7,6 @@
 //
 
 import Foundation
+
+@IBOutlet weak var textView: UITextView!
+@IBOutlet var numberButtons: [UIButton]!
