@@ -110,20 +110,20 @@ class ViewController: UIViewController {
                 // to force priority to left operator, index -1
                 place = index - 1
             }
-            let left = Int(operationsToReduce[place])!
+            guard let left = Double(operationsToReduce[place]) else { return }
             let operand = operationsToReduce[place + 1]
-            let right = Int(operationsToReduce[place + 2])!
+            guard let right = Double(operationsToReduce[place + 2]) else { return }
             
-            let result: Int
+            let result: Double
             switch operand {
             case "+": result = left + right
             case "-": result = left - right
             case "*": result = left * right
-            case "/": result = left / right
+            case "/": result = division(left: left, right: right)
             default: fatalError("Unknown operator !")
             }
             
-//            operationsToReduce = Array(operationsToReduce(3))
+            //            operationsToReduce = Array(operationsToReduce(3))
             for _ in 1...3 {
                 operationsToReduce.remove(at: place)
             }
@@ -132,6 +132,16 @@ class ViewController: UIViewController {
         
         textView.text.append(" = \(operationsToReduce.first!)")
     }
+    
+    
+    func division(left: Double, right: Double) -> Double {
+        //        guard right == 0 else { return -1 }
+            if right == 0 {
+                textView.text.append("not void ")
+            }
+            let result = left / right
+            return result
+        }
 
 }
 
