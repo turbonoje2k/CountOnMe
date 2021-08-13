@@ -121,14 +121,14 @@ class CalculatorModel {
             default: fatalError("Unknown operator !")
             }
             
-            //            operationsToReduce = Array(operationsToReduce(3))
+            //operationsToReduce = Array(operationsToReduce(3))
             for _ in 1...3 {
                 operationsToReduce.remove(at: place)
             }
             operationsToReduce.insert("\(result)", at: place)
         }
         
-//        textView.append(" = \(operationsToReduce.first!)")
+//textView.append(" = \(operationsToReduce.first!)")
         textView += " = \(operationsToReduce.first ?? "Error")"
         sendToControler(data: textView)
     }

@@ -38,14 +38,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tappedSubstractionButton(_ sender: UIButton) {
-
         calculator.tappedSubstraction()
     }
     @IBAction func tappedMultiplicationButton(_ sender: UIButton) {
         calculator.tappedMultiplication()
     }
     @IBAction func tappedDivisionButton(_ sender: UIButton) {
-
         calculator.tappedDivision()
     }
     

@@ -14,8 +14,6 @@
 		1FA43BDD224E569A00F565CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA43BDB224E569A00F565CB /* LaunchScreen.storyboard */; };
 		1FA43BE8224E569A00F565CB /* SimpleCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA43BE7224E569A00F565CB /* SimpleCalcTests.swift */; };
 		1FA43BF3224E569A00F565CB /* SimpleCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA43BF2224E569A00F565CB /* SimpleCalcUITests.swift */; };
-		DCA7C99C268D04D2005A919A /* CountOnMeControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7C99B268D04D2005A919A /* CountOnMeControler.swift */; };
-		DCA7C99E268D04F0005A919A /* CountOnMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA7C99D268D04F0005A919A /* CountOnMeView.swift */; };
 		DCE12B9926A1EED80082A9AF /* CountOnMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE12B9826A1EED80082A9AF /* CountOnMeModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +48,6 @@
 		1FA43BEE224E569A00F565CB /* CountOnMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountOnMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FA43BF2224E569A00F565CB /* SimpleCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalcUITests.swift; sourceTree = "<group>"; };
 		1FA43BF4224E569A00F565CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCA7C99B268D04D2005A919A /* CountOnMeControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountOnMeControler.swift; sourceTree = "<group>"; };
-		DCA7C99D268D04F0005A919A /* CountOnMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountOnMeView.swift; sourceTree = "<group>"; };
 		DCE12B9826A1EED80082A9AF /* CountOnMeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountOnMeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,12 +99,10 @@
 		1FA43BD1224E569900F565CB /* CountOnMe */ = {
 			isa = PBXGroup;
 			children = (
+				DC0D9E0026C449A5005ED643 /* Storyboard */,
 				DCB884D82682595F0088E4C1 /* Controller */,
 				DCB884D72682592F0088E4C1 /* Model */,
-				DCB884D6268259250088E4C1 /* View */,
 				1FA43BD2224E569900F565CB /* AppDelegate.swift */,
-				1FA43BD4224E569900F565CB /* ViewController.swift */,
-				1FA43BD6224E569900F565CB /* Main.storyboard */,
 				1FA43BD9224E569A00F565CB /* Assets.xcassets */,
 				1FA43BDB224E569A00F565CB /* LaunchScreen.storyboard */,
 				1FA43BDE224E569A00F565CB /* Info.plist */,
@@ -134,12 +128,12 @@
 			path = CountOnMeUITests;
 			sourceTree = "<group>";
 		};
-		DCB884D6268259250088E4C1 /* View */ = {
+		DC0D9E0026C449A5005ED643 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				DCA7C99D268D04F0005A919A /* CountOnMeView.swift */,
+				1FA43BD6224E569900F565CB /* Main.storyboard */,
 			);
-			path = View;
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		DCB884D72682592F0088E4C1 /* Model */ = {
@@ -153,7 +147,7 @@
 		DCB884D82682595F0088E4C1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DCA7C99B268D04D2005A919A /* CountOnMeControler.swift */,
+				1FA43BD4224E569900F565CB /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -292,8 +286,6 @@
 				1FA43BD5224E569900F565CB /* ViewController.swift in Sources */,
 				1FA43BD3224E569900F565CB /* AppDelegate.swift in Sources */,
 				DCE12B9926A1EED80082A9AF /* CountOnMeModel.swift in Sources */,
-				DCA7C99C268D04D2005A919A /* CountOnMeControler.swift in Sources */,
-				DCA7C99E268D04F0005A919A /* CountOnMeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
