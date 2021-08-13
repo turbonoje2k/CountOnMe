@@ -133,6 +133,10 @@ class CalculatorModel {
         sendToControler(data: textView)
     }
     
+    func tappedReset() {
+        return()
+    }
+    
     func division(left: Double, right: Double) -> Double {
         //        guard right == 0 else { return -1 }
             if right == 0 {

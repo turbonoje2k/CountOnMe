@@ -50,6 +50,9 @@ class ViewController: UIViewController {
     @IBAction func tappedEqualButton(_ sender: UIButton) {
         calculator.tappedEqual()
     }
+    @IBAction func tappedResetButton(_ sender: UIButton) {
+        calculator.tappedReset()
+    }
 }
 
 //EXTENSION

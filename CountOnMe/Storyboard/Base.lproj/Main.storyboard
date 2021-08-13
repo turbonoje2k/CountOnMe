@@ -173,6 +173,7 @@
                                         </state>
                                         <connections>
                                             <action selector="tappedAdditionButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="V0J-eg-vQK"/>
+                                            <action selector="tappedResetButton:" destination="eqK-jh-KKu" eventType="touchUpInside" id="6Vd-hs-aKW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fW2-gl-hxf">
