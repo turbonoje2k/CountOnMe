@@ -57,6 +57,31 @@ class SimpleCalcTests: XCTestCase {
         
         XCTAssert(simpleCalc.result == 2)
     }
+    
+    func testReset() {
+        simpleCalc.tappedReset()
+        
+    }
+    
+    func testPriorityOperande() {
+        
+    }
+    
+    func testErrorMsg() {
+        
+    }
+    
+    func divisionPerZero() {
+        
+    }
+    
+    func testDoubleOperande() {
+        
+    }
+    
+    func testOperandeberforeCalc() {
+        
+    }
 
     func testExample() throws {
         // This is an example of a functional test case.
