@@ -24,6 +24,7 @@ class CalculatorModel {
     var elements: [String] {
         return textView.split(separator: " ").map { "\($0)" }
     }
+    var result: Double = 0.00
     
     func expressionIsCorrect(elements: [String]) ->  Bool {
         return elements.last != "+" && elements.last != "-"
@@ -112,7 +113,6 @@ class CalculatorModel {
             let operand = operationsToReduce[place + 1]
             guard let right = Double(operationsToReduce[place + 2]) else { return }
             
-            let result: Double
             switch operand {
             case "+": result = left + right
             case "-": result = left - right
@@ -134,17 +134,21 @@ class CalculatorModel {
     }
     
     func tappedReset() {
-        return()
+        textView = ""
+        return sendToControler(data: textView)
     }
     
     func division(left: Double, right: Double) -> Double {
         //        guard right == 0 else { return -1 }
-            if right == 0 {
-                textView.append("not void ")
-            }
+        if right == 0 {
+            textView = "Error"
+            delegate?.displayAlert(message: "You can't divise per 0 !")
+            return 0.0
+        } else {
             let result = left / right
             return result
         }
+    }
 }
 
 
