@@ -54,7 +54,7 @@ class CalculatorModel {
         if canAddOperator(elements: elements) {
             textView += " - "
         } else {
-            delegate?.displayAlert(message : "error: operand already exist")
+            delegate?.displayAlert(message: "error: operand already exist")
         }
         return sendToControler(data: "-")
     }
@@ -63,7 +63,7 @@ class CalculatorModel {
         if canAddOperator(elements: elements) {
             textView += " * "
         } else {
-            delegate?.displayAlert(message : "error: operand already exist")
+            delegate?.displayAlert(message: "error: operand already exist")
         }
         return sendToControler(data: "*")
     }
@@ -72,7 +72,7 @@ class CalculatorModel {
         if canAddOperator(elements: elements) {
             textView += " / "
         } else {
-            delegate?.displayAlert(message : "error: operand already exist")
+            delegate?.displayAlert(message: "error: operand already exist")
         }
         return sendToControler(data: "/")
     }
@@ -80,7 +80,7 @@ class CalculatorModel {
     func displayAlertInController(message: String) {
         delegate?.displayAlert(message: message)
     }
-    
+
     func addStringNumber(number: String) {
         if expressionHaveResult(elements: textView) {
             textView = ""
