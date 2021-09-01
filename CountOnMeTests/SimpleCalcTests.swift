@@ -59,27 +59,61 @@ class SimpleCalcTests: XCTestCase {
     }
 
     func testReset() {
+        simpleCalc.tappedReset()
 
+        XCTAssertEqual(simpleCalc.result == 0.0, simpleCalc.displayAlertInController(message: "") ==
+                        simpleCalc.displayAlertInController(message: ""))
     }
 
     func testPriorityOperande() {
+        simpleCalc.addStringNumber(number: "3")
+        simpleCalc.tappedAddition()
+        simpleCalc.addStringNumber(number: "4")
+        simpleCalc.tappedDivision()
+        simpleCalc.addStringNumber(number: "2")
+        simpleCalc.calculate()
 
+        XCTAssert(simpleCalc.result == 5)
     }
 
     func testErrorMsg() {
 
     }
 
-    func divisionPerZero() {
+    func testdivisionPerZero() {
+        simpleCalc.addStringNumber(number: "4")
+        simpleCalc.tappedDivision()
+        simpleCalc.addStringNumber(number: "0")
+        simpleCalc.calculate()
+
+        XCTAssertEqual(simpleCalc.result == 0.0,
+                       simpleCalc.displayAlertInController(message: "You can't divise per 0 !") ==
+                       simpleCalc.displayAlertInController(message: "You can't divise per 0 !"))
 
     }
 
     func testDoubleOperande() {
+        simpleCalc.addStringNumber(number: "3")
+        simpleCalc.tappedAddition()
+        simpleCalc.tappedAddition()
+        simpleCalc.addStringNumber(number: "4")
+        simpleCalc.calculate()
 
+        XCTAssertEqual(simpleCalc.result == 0.0,
+                       simpleCalc.displayAlertInController(message: "operand already exist") ==
+                       simpleCalc.displayAlertInController(message: "operand already exist"))
     }
 
     func testOperandeberforeCalc() {
+        simpleCalc.tappedSubstraction()
+        simpleCalc.addStringNumber(number: "2")
+        simpleCalc.tappedMultiplication()
+        simpleCalc.addStringNumber(number: "2")
+        simpleCalc.calculate()
+    }
 
+    func testAllOperande() {
+        //2/1*2-1+1
     }
 
     func testExample() throws {
@@ -93,5 +127,4 @@ class SimpleCalcTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

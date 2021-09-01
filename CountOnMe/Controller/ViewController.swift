@@ -20,12 +20,6 @@ class ViewController: UIViewController {
         calculator.delegate = self
     }
 
-    func warnigRepeatOperator() {
-        let alertVC = UIAlertController(title: "Zéro!", message: "Operator already exist !", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alertVC, animated: true, completion: nil)
-    }
-
     // View actions
     @IBAction func tappedNumberButton(_ sender: UIButton) {
 
@@ -57,11 +51,12 @@ class ViewController: UIViewController {
 // EXTENSION
 extension ViewController: CalculatorDelegate {
     func displayAlert(message: String) {
-        print("alert")
+        let alertVC = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alertVC, animated: true, completion: nil)
     }
 
     func didReceiveData(data: String) {
         textView.text = calculator.textView
     }
-
 }

@@ -25,19 +25,19 @@ class CalculatorModel {
     }
     var result: Double = 0.00
 
-    func expressionIsCorrect(elements: [String]) -> Bool {
+    private func expressionIsCorrect(elements: [String]) -> Bool {
         return elements.last != "+" && elements.last != "-"
     }
 
-    func expressionHaveEnoughElement(elements: [String]) -> Bool {
+    private func expressionHaveEnoughElement(elements: [String]) -> Bool {
         return elements.count >= 3
     }
 
-    func canAddOperator(elements: [String]) -> Bool {
+    private func canAddOperator(elements: [String]) -> Bool {
         return elements.last != "+" && elements.last != "-" && elements.last != "*" && elements.last != "/"
     }
 
-    func expressionHaveResult(elements: String) ->  Bool {
+    func expressionHaveResult(elements: String) -> Bool {
         return textView.firstIndex(of: "=") != nil
     }
 
@@ -45,7 +45,7 @@ class CalculatorModel {
         if canAddOperator(elements: elements) {
             textView += " + "
         } else {
-            print("error: operand already exist")
+            delegate?.displayAlert(message: "operand already exist")
         }
         return sendToControler(data: "+")
     }
@@ -54,7 +54,7 @@ class CalculatorModel {
         if canAddOperator(elements: elements) {
             textView += " - "
         } else {
-            print("error: operand already exist")
+            delegate?.displayAlert(message : "error: operand already exist")
         }
         return sendToControler(data: "-")
     }
@@ -63,7 +63,7 @@ class CalculatorModel {
         if canAddOperator(elements: elements) {
             textView += " * "
         } else {
-            print("error: operand already exist")
+            delegate?.displayAlert(message : "error: operand already exist")
         }
         return sendToControler(data: "*")
     }
@@ -72,11 +72,15 @@ class CalculatorModel {
         if canAddOperator(elements: elements) {
             textView += " / "
         } else {
-            print("error: operand already exist")
+            delegate?.displayAlert(message : "error: operand already exist")
         }
         return sendToControler(data: "/")
     }
 
+    func displayAlertInController(message: String) {
+        delegate?.displayAlert(message: message)
+    }
+    
     func addStringNumber(number: String) {
         if expressionHaveResult(elements: textView) {
             textView = ""
@@ -87,11 +91,11 @@ class CalculatorModel {
 
     func tappedEqual() {
         guard expressionIsCorrect(elements: elements) else {
-            delegate?.displayAlert(message: "Expression not correct")
+            displayAlertInController(message: "Expression not correct")
             return
         }
         guard expressionHaveEnoughElement(elements: elements) else {
-            delegate?.displayAlert(message: "not Enought elements")
+            displayAlertInController(message: "Not enought elements")
             return
         }
         calculate()
