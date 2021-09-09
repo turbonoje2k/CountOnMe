@@ -26,7 +26,7 @@ class SimpleCalcTests: XCTestCase {
         simpleCalc.addStringNumber(number: "3")
         simpleCalc.tappedAddition()
         simpleCalc.addStringNumber(number: "4")
-        simpleCalc.calculate()
+        simpleCalc.tappedEqual()
 
         XCTAssert(simpleCalc.result == 7)
     }
@@ -76,6 +76,25 @@ class SimpleCalcTests: XCTestCase {
         XCTAssert(simpleCalc.result == 5)
     }
 
+    func testGivenDivisionNotEnoughtElement() {
+        simpleCalc.addStringNumber(number: "2")
+        simpleCalc.tappedDivision()
+        simpleCalc.tappedEqual()
+
+        XCTAssertEqual(simpleCalc.textView == "2 / ",
+                       simpleCalc.displayAlertInController(message: "Not enought elements") ==
+                       simpleCalc.displayAlertInController(message: "Not enought elements"))
+    }
+    
+    func testGivenmsgPopUp()  {
+        simpleCalc.addStringNumber(number: "2")
+        simpleCalc.tappedSubstraction()
+        simpleCalc.tappedSubstraction()
+        
+        XCTAssertEqual(simpleCalc.textView == "2 - ",
+                       simpleCalc.displayAlertInController(message: "error: operand already exist") ==
+                       simpleCalc.displayAlertInController(message: "error: operand already exist"))
+    }
     func testErrorMsg() {
 
     }
