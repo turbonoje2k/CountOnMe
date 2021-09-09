@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         calculator.delegate = self
     }
 
-    // View actions
+//MARK: View actions
     @IBAction func tappedNumberButton(_ sender: UIButton) {
 
         guard let titleButton = sender.title(for: .normal) else { return }
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         calculator.tappedReset()
     }
 }
-// EXTENSION
+//MARK: EXTENSION
 extension ViewController: CalculatorDelegate {
     func displayAlert(message: String) {
         let alertVC = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)

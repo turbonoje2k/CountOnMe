@@ -80,6 +80,20 @@ class SimpleCalcTests: XCTestCase {
 
     }
 
+    func testGiventTappedEqual() {
+        simpleCalc.tappedEqual()
+
+        XCTAssert(simpleCalc.textView == "")
+    }
+
+    func testGiventExpressionIsCorrect() {
+        simpleCalc.addStringNumber(number: "3")
+        simpleCalc.tappedAddition()
+        simpleCalc.tappedEqual()
+
+        XCTAssert(simpleCalc.textView == "3 + ")
+    }
+
     func testdivisionPerZero() {
         simpleCalc.addStringNumber(number: "4")
         simpleCalc.tappedDivision()
@@ -89,20 +103,24 @@ class SimpleCalcTests: XCTestCase {
         XCTAssertEqual(simpleCalc.result == 0.0,
                        simpleCalc.displayAlertInController(message: "You can't divise per 0 !") ==
                        simpleCalc.displayAlertInController(message: "You can't divise per 0 !"))
-
     }
 
-//    func testDoubleOperande() {
-//        simpleCalc.addStringNumber(number: "3")
-//        simpleCalc.tappedAddition()
-//        simpleCalc.tappedAddition()
-//        simpleCalc.addStringNumber(number: "4")
-//        simpleCalc.calculate()
-//
-//        XCTAssertEqual(simpleCalc.result == 0.0,
-//                       simpleCalc.displayAlertInController(message: "operand already exist") ==
-//                       simpleCalc.displayAlertInController(message: "operand already exist"))
-//    }
+    func testGivenEqual() {
+        simpleCalc.addStringNumber(number: "3")
+        simpleCalc.tappedEqual()
+
+        XCTAssert(simpleCalc.textView == "3")
+    }
+
+    func testDoubleOperande() {
+        simpleCalc.addStringNumber(number: "3")
+        simpleCalc.tappedAddition()
+        simpleCalc.tappedAddition()
+
+        XCTAssertEqual(simpleCalc.textView == "3 + ",
+                       simpleCalc.displayAlertInController(message: "operand already exist") ==
+                       simpleCalc.displayAlertInController(message: "operand already exist"))
+    }
 
     func testOperandeberforeCalc() {
         simpleCalc.tappedSubstraction()
@@ -110,6 +128,9 @@ class SimpleCalcTests: XCTestCase {
         simpleCalc.tappedMultiplication()
         simpleCalc.addStringNumber(number: "2")
         simpleCalc.calculate()
+        
+        //TODO: A FINIR
+
     }
 
     func testAllOperande() {

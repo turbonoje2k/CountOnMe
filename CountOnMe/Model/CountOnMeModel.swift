@@ -8,12 +8,14 @@
 
 import Foundation
 
+//MARK: Protocol
 protocol CalculatorDelegate {
     func displayAlert(message: String)
     func didReceiveData(data: String)
 
 }
 
+//MARK: Class Calculator Model
 class CalculatorModel {
     var delegate: CalculatorDelegate?
     func sendToControler(data: String) {
