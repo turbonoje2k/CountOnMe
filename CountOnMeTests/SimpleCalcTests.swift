@@ -65,7 +65,7 @@ class SimpleCalcTests: XCTestCase {
                         simpleCalc.displayAlertInController(message: ""))
     }
 
-    func testGivenMultiplicationAndAddition_whenTappedCalculate_thenResultPriorityToMultiplication() {
+    func testGivenMultiplicationAndAddition_WhenTappedCalculate_ThenResultPriorityToMultiplication() {
         simpleCalc.addStringNumber(number: "3")
         simpleCalc.tappedAddition()
         simpleCalc.addStringNumber(number: "4")
@@ -76,7 +76,7 @@ class SimpleCalcTests: XCTestCase {
         XCTAssert(simpleCalc.result == 5)
     }
 
-    func testGivenDivisionNotEnoughtElement() {
+    func testGivenDivisionNotEnoughtElement_WhenTappedCalculate_ThenErrorMsgAppear() {
         simpleCalc.addStringNumber(number: "2")
         simpleCalc.tappedDivision()
         simpleCalc.tappedEqual()
@@ -85,27 +85,50 @@ class SimpleCalcTests: XCTestCase {
                        simpleCalc.displayAlertInController(message: "Not enought elements") ==
                        simpleCalc.displayAlertInController(message: "Not enought elements"))
     }
-    
-    func testGivenmsgPopUp()  {
+
+    func testGivenTappedTwoSubstratctionOperande_WhenTappedEqual_ThenErrorMsgAppear() {
         simpleCalc.addStringNumber(number: "2")
         simpleCalc.tappedSubstraction()
         simpleCalc.tappedSubstraction()
-        
+
         XCTAssertEqual(simpleCalc.textView == "2 - ",
                        simpleCalc.displayAlertInController(message: "error: operand already exist") ==
                        simpleCalc.displayAlertInController(message: "error: operand already exist"))
     }
-    func testErrorMsg() {
 
+    func testGivenTappedTwodivisionOperande_WhenTappedEqual_ThenErrorMsgAppear() {
+        simpleCalc.addStringNumber(number: "2")
+        simpleCalc.tappedDivision()
+        simpleCalc.tappedDivision()
+
+        XCTAssertEqual(simpleCalc.textView == "2 / ",
+                       simpleCalc.displayAlertInController(message: "error: operand already exist") ==
+                       simpleCalc.displayAlertInController(message: "error: operand already exist"))
     }
 
-    func testGiventTappedEqual() {
+    func testGivenTappedTwoMultiplicationOperande_WhenTappedEqual_ThenErrorMsgAppear() {
+        simpleCalc.addStringNumber(number: "2")
+        simpleCalc.tappedMultiplication()
+        simpleCalc.tappedMultiplication()
+
+        XCTAssertEqual(simpleCalc.textView == "2 * ",
+                       simpleCalc.displayAlertInController(message: "error: operand already exist") ==
+                       simpleCalc.displayAlertInController(message: "error: operand already exist"))
+    }
+
+    func testGivenAddStringNumber_WhenTappedNumber_ThenNumberIs() {
+        simpleCalc.addStringNumber(number: "3")
+
+        XCTAssert(simpleCalc.textView == "3")
+    }
+
+    func testGivenTappedEqual_WhenTappedEqual_thenEmptyString() {
         simpleCalc.tappedEqual()
 
         XCTAssert(simpleCalc.textView == "")
     }
 
-    func testGiventExpressionIsCorrect() {
+    func testGiventExpressionIsCorrect_When() {
         simpleCalc.addStringNumber(number: "3")
         simpleCalc.tappedAddition()
         simpleCalc.tappedEqual()
