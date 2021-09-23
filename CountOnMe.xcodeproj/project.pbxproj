@@ -13,7 +13,6 @@
 		1FA43BDA224E569A00F565CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FA43BD9224E569A00F565CB /* Assets.xcassets */; };
 		1FA43BDD224E569A00F565CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA43BDB224E569A00F565CB /* LaunchScreen.storyboard */; };
 		DC5ED73726CEDE2300429F77 /* SimpleCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5ED73626CEDE2300429F77 /* SimpleCalcTests.swift */; };
-		DC5ED73826CEDE9300429F77 /* SimpleCalcTests.swift in Resources */ = {isa = PBXBuildFile; fileRef = DC5ED73626CEDE2300429F77 /* SimpleCalcTests.swift */; };
 		DCE12B9926A1EED80082A9AF /* CountOnMeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE12B9826A1EED80082A9AF /* CountOnMeModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -146,7 +145,6 @@
 				1FA43BCB224E569900F565CB /* Sources */,
 				1FA43BCC224E569900F565CB /* Frameworks */,
 				1FA43BCD224E569900F565CB /* Resources */,
-				DCA1FF7B26D4F29900F442E5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -229,31 +227,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC5ED73826CEDE9300429F77 /* SimpleCalcTests.swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DCA1FF7B26D4F29900F442E5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1FA43BCB224E569900F565CB /* Sources */ = {

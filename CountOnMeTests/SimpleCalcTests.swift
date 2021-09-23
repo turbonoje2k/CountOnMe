@@ -128,15 +128,17 @@ class SimpleCalcTests: XCTestCase {
         XCTAssert(simpleCalc.textView == "")
     }
 
-    func testGiventExpressionIsCorrect_When() {
+    func testGiventExpressionIsNotCorrect_WhenTappedEqualWithNoStringNumber_ThenErrorAppear() {
         simpleCalc.addStringNumber(number: "3")
         simpleCalc.tappedAddition()
         simpleCalc.tappedEqual()
 
-        XCTAssert(simpleCalc.textView == "3 + ")
+        XCTAssertEqual(simpleCalc.textView == "3 + ",
+                       simpleCalc.displayAlertInController(message: "Expression not correct") ==
+                       simpleCalc.displayAlertInController(message: "Expression not correct"))
     }
 
-    func testdivisionPerZero() {
+    func testGivenDivisionPerZero_WhenTappedDivisionPerZero_ThenMsgErrorAppear() {
         simpleCalc.addStringNumber(number: "4")
         simpleCalc.tappedDivision()
         simpleCalc.addStringNumber(number: "0")
@@ -147,14 +149,14 @@ class SimpleCalcTests: XCTestCase {
                        simpleCalc.displayAlertInController(message: "You can't divise per 0 !"))
     }
 
-    func testGivenEqual() {
+    func testGivenTappedEqualWithout_whenForgetToAddaSecondNumberToCalc_ThenPopUpAppear() {
         simpleCalc.addStringNumber(number: "3")
         simpleCalc.tappedEqual()
 
         XCTAssert(simpleCalc.textView == "3")
     }
 
-    func testDoubleOperande() {
+    func testGivenTappedDoubleOperande_WhenTappedAdditionTwice_ThenMsgOperandeAlreadyExistAppear() {
         simpleCalc.addStringNumber(number: "3")
         simpleCalc.tappedAddition()
         simpleCalc.tappedAddition()
@@ -164,18 +166,17 @@ class SimpleCalcTests: XCTestCase {
                        simpleCalc.displayAlertInController(message: "operand already exist"))
     }
 
-    func testOperandeberforeCalc() {
+    func testGivenOperandeberforeCalc_WhenTappedMultiplicationOperandeBeforeNumber_ThenCrash() {
         simpleCalc.tappedSubstraction()
         simpleCalc.addStringNumber(number: "2")
         simpleCalc.tappedMultiplication()
         simpleCalc.addStringNumber(number: "2")
         simpleCalc.calculate()
-        
-        //TODO: A FINIR
 
+        //TODO: A FINIR
     }
 
-    func testAllOperande() {
+    func testGivenAllOperandeCalc_WhenTheCalcGetAllOperande_ThenThePriorityOfOperandeIsRespected() {
         simpleCalc.addStringNumber(number: "2")
         simpleCalc.tappedAddition()
         simpleCalc.addStringNumber(number: "3")
