@@ -87,7 +87,6 @@
 				DCB884D72682592F0088E4C1 /* Model */,
 				1FA43BD2224E569900F565CB /* AppDelegate.swift */,
 				1FA43BD9224E569A00F565CB /* Assets.xcassets */,
-				1FA43BDB224E569A00F565CB /* LaunchScreen.storyboard */,
 				1FA43BDE224E569A00F565CB /* Info.plist */,
 			);
 			path = CountOnMe;
@@ -115,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				1FA43BD6224E569900F565CB /* Main.storyboard */,
+				1FA43BDB224E569A00F565CB /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
