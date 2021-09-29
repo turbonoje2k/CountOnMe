@@ -64,5 +64,7 @@ extension ViewController: CalculatorDelegate {
 
     func didReceiveData(data: String) {
         textView.text = calculator.textView
+        let point = CGPoint(x: 0.0, y: (textView.contentSize.height - textView.bounds.height))
+        textView.setContentOffset(point, animated: false)
     }
 }
